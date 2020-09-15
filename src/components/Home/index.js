@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { ReactComponent as Logo } from '../../assets/logo.svg'
 import { ReactComponent as Cards } from '../../assets/cards.svg'
@@ -25,23 +26,28 @@ const Home = () => (
       <nav className="home-menu">
         <ul className="home-menu-list">
           <li className="home-menu-item">
-            <button>
+            <Link to="/game" className="home-menu-button">
               <Cards className="home-menu-icon" />
               Jouer
-            </button>
+            </Link>
           </li>
           <li className="home-menu-item">
-            <button>
+            <Link to="/settings" className="home-menu-button">
               {' '}
               <Settings className="home-menu-icon" />
               Paramètres
-            </button>
+            </Link>
           </li>
           <li className="home-menu-item">
-            <button>
+            <a
+              href="https://play.funbridge.com"
+              className="home-menu-button"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               <Fb className="home-menu-icon" />
               FunBridge
-            </button>
+            </a>
           </li>
         </ul>
       </nav>

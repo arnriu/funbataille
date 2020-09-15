@@ -65,11 +65,13 @@
       max-height: 30rem
 
       .home-menu-item
-        button
+        display: flex
+
+        .home-menu-button
           display: flex
+          width: 100%
           justify-content: center
           align-items: center
-          width: 100%
           font-size: 2rem
           border: .25rem solid $primary
           color: $primary
@@ -78,7 +80,8 @@
           padding: .75rem
           margin: .5rem 0
           cursor: pointer
-          transform: scale(1)
+          text-decoration: none
+          transform: translate3d(0, 0, 0)
           transition: all .3s ease
 
           .home-menu-icon
@@ -91,7 +94,7 @@
           &:hover
             background: $primary
             color: $white
-            transform: translate(0, -.125rem)
+            transform: translate3d(0, -.125rem, 0)
             box-shadow: 0 .5rem 1rem 0 rgba($primary, .5)
 
             .home-menu-icon
