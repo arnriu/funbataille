@@ -1,0 +1,98 @@
+.home
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: 100vh
+
+.main-header
+  .header-top-bar
+    height: 1.5rem
+    background: $p-dark
+
+  .header-brand
+    display: flex
+    justify-content: center
+    align-items: center
+    background: $primary
+    color: $white
+    padding: 2rem
+
+    .header-logo
+      width: 3rem
+      height: 3rem
+      margin-right: 0.5rem
+      fill: $white
+
+    .header-title
+      font-weight: normal
+      font-size: 2.5rem
+      text-transform: uppercase
+
+.main-footer
+  padding: 1.5rem 0
+  text-align: center
+  font-size: 1.125rem
+
+.main-body
+  background: $secondary
+  flex: 1
+  position: relative
+  overflow: hidden
+  min-height: 17rem
+
+  .logo-bg
+    position: absolute
+    fill: $white
+    width: 50vmax
+    right: 0
+    bottom: 0
+    transform: translate(30%, 15%) rotate(-25deg)
+
+  .home-menu
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    .home-menu-list
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      padding: 2rem 0
+      margin: 0 auto
+      width: 24rem
+      height: 100%
+      max-height: 30rem
+
+      .home-menu-item
+        button
+          display: flex
+          justify-content: center
+          align-items: center
+          width: 100%
+          font-size: 2rem
+          border: .25rem solid $primary
+          color: $primary
+          background: $white
+          border-radius: 2rem
+          padding: .75rem
+          margin: .5rem 0
+          cursor: pointer
+          transform: scale(1)
+          transition: all .3s ease
+
+          .home-menu-icon
+            width: 2rem
+            height: 2rem
+            fill: $primary
+            transition: all .3s ease
+            margin-right: .5rem
+
+          &:hover
+            background: $primary
+            color: $white
+            transform: translate(0, -.125rem)
+            box-shadow: 0 .5rem 1rem 0 rgba($primary, .5)
+
+            .home-menu-icon
+              fill: $white

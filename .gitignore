@@ -1,0 +1,27 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/proxy/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+/staging
+/release
+*.zip
+
+/ngrok
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env-cmdrc
+
+npm-debug.log*
