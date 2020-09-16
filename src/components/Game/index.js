@@ -1,5 +1,12 @@
 import React from 'react'
 
-const Game = () => <div>Game</div>
+import BackButton from '../BackButton'
+
+const Game = () => (
+  <div>
+    <h1>Game</h1>
+    <BackButton />
+  </div>
+)
 
 export default Game

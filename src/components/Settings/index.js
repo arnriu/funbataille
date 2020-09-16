@@ -1,5 +1,12 @@
 import React from 'react'
 
-const Settings = () => <div>Settings</div>
+import BackButton from '../BackButton'
+
+const Settings = () => (
+  <div>
+    <h1>Settings</h1>
+    <BackButton />
+  </div>
+)
 
 export default Settings
