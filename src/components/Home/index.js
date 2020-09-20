@@ -1,14 +1,14 @@
 import React from 'react'
 
 import Icon from '../Icon'
+import Header from '../Header'
+import Footer from '../Footer'
 
-import HomeHeader from './HomeHeader'
 import HomeMenu from './HomeMenu'
-import HomeFooter from './HomeFooter'
 
 const Home = () => (
   <div className="home">
-    <HomeHeader />
+    <Header label="FunBataille" icon="logo" />
 
     <div className="main-body">
       <div className="logo-bg">
@@ -18,7 +18,7 @@ const Home = () => (
       <HomeMenu />
     </div>
 
-    <HomeFooter />
+    <Footer />
   </div>
 )
 

@@ -2,14 +2,14 @@ import React from 'react'
 
 import Icon from '../Icon'
 
-const HomeHeader = () => (
+const HomeHeader = ({label, icon}) => (
   <header className="main-header">
     <div className="header-top-bar"></div>
     <div className="header-brand">
-      <Icon name="logo" className="header-logo" />
+      <Icon name={icon ?? "logo"} className="header-icon" />
 
       <h1 className="header-title">
-        Fun<strong>Bataille</strong>
+        {label ?? "Titre"}
       </h1>
     </div>
   </header>
