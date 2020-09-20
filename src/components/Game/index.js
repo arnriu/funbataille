@@ -4,6 +4,7 @@ import { cards } from '../../constants/game'
 import { shuffle } from '../../helpers/game'
 
 import BackButton from '../BackButton'
+import Icon from '../Icon'
 
 import Seat from './Seat'
 
@@ -98,6 +99,9 @@ const Game = () => {
         <BackButton />
       </div>
       <div className="table">
+        <div className="table-bg">
+          <Icon name="logo" />
+        </div>
         <Seat player="N" deck={northDeck} />
         <Seat player="S" deck={southDeck} playCard={playCard} />
       </div>

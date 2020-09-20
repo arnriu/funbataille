@@ -9,11 +9,10 @@ const Icon = ({ name, type, ...rest }) => {
     const importIcon = async () => {
       try {
         ImportedIconRef.current = await import(
-          // `!!@svgr/webpack?-svgo,+titleProp,+ref!../../assets/${
-            `../../assets/${
+          `!!@svgr/webpack?-svgo,+titleProp,+ref!../../assets/${
             type ?? 'icons'
           }/${name}.svg`
-        ).createElement
+        )
       } catch (err) {
         throw err
       } finally {
