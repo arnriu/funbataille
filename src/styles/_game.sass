@@ -7,10 +7,10 @@
 
 @keyframes animPlayedSouth
   0%
-    transform: translate3d(calc(-50%), calc(100vh - 20vmin * 1.55721 - 20% ), 0)
+    transform: translate3d(calc(-50%), calc(100vh - 20vmin * 1.55721 - 20% - 1vmin), 0)
 
   100%
-    transform: translate3d(calc(10%), calc(100vh - 10vmin * 1.55721 - 10% ), 0)
+    transform: translate3d(calc(10%), calc(100vh - 10vmin * 1.55721 - 10% - 1vmin), 0)
 
 .table
   background: $green
@@ -19,22 +19,55 @@
   height: 100vh
   overflow: hidden
 
+.seat
+  &:after
+    content: ''
+    display: block
+    position: absolute
+    width: 24vmin
+    height: calc(26vmin / 1.55721)
+    background: $blue
+    left: 50%
+    top: 2vmin
+    transform: translate(-50%, 0)
+    border-radius: 1vmin
+
+  .seat-infos
+    position: absolute
+    top: 0.125rem
+    left: 50%
+    transform: translate(-50%, 0)
+    color: $white
+    font-size: 1.125rem
+    font-weight: bold
+
+  &.seat-S
+    &:after
+      top: auto
+      bottom: 2vmin
+
+    .seat-infos
+      top: auto
+      bottom: 0.125rem
+
 .card
   width: 10vmin
   left: 50%
+  top: 1vmin
   position: absolute
-  transition: all .3s ease
+  transition: all .3s .3s ease
+  z-index: 1000
 
   &.card-N
     &.card-deck
-      transform: translate3d(calc(-110%), 10%, 0)
+      transform: translate3d(-110%, 10%, 0)
 
     &.card-inPlay,
     &.card-inPlayHidden
-      transform: translate3d(calc(-50%), calc(10vmin * 1.55721 + 20% ), 0)
+      transform: translate3d(-50%, calc(10vmin * 1.55721 + 20% ), 0)
 
     &.card-inPlayLose
-      transform: translate3d(calc(-50%), calc(100vh - 20vmin * 1.55721 - 20% ), 0)
+      transform: translate3d(-50%, calc(100vh - 20vmin * 1.55721 - 20% - 2vmin ), 0)
       z-index: 0 !important
 
     &.card-played-lose,
@@ -42,15 +75,19 @@
       animation: animPlayedNorth .3s ease forwards
 
   &.card-S
+    top: auto
+    cursor: pointer
+    transition: all .3s ease
+
     &.card-deck
-      transform: translate3d(calc(-110%), calc(100vh - 10vmin * 1.55721 - 10% ), 0)
+      transform: translate3d(-110%, calc(100vh - 10vmin * 1.55721 - 10% - 1vmin ), 0)
 
     &.card-inPlay,
     &.card-inPlayHidden
-      transform: translate3d(calc(-50%), calc(100vh - 20vmin * 1.55721 - 20% ), 0)
+      transform: translate3d(-50%, calc(100vh - 20vmin * 1.55721 - 20% - 1vmin ), 0)
 
     &.card-inPlayLose
-      transform: translate3d(calc(-50%), calc(10vmin * 1.55721 + 20% ), 0)
+      transform: translate3d(-50%, calc(10vmin * 1.55721 + 20% + 1vmin ), 0)
       z-index: 0 !important
 
     &.card-played-lose,

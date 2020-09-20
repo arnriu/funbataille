@@ -4,7 +4,7 @@ import cardBack from '../../assets/backs/blue.svg'
 
 const cardsAssets = require.context('../../assets/cards')
 
-const Card = ({ card, hexValue, zIndex, player, cardState, playCard }) => {
+const Card = ({ card, zIndex, player, cardState, playCard }) => {
   const [faceSide, setFaceSide] = useState('faceDown')
 
   useEffect(() => {
@@ -17,14 +17,18 @@ const Card = ({ card, hexValue, zIndex, player, cardState, playCard }) => {
 
   const handleClick = useCallback(() => {
     typeof playCard === 'function' && playCard()
-  }, [playCard, card, hexValue])
+  }, [playCard])
 
   return (
     <div
       className={`card card-${player} card-${cardState}`}
       onClick={handleClick}
       style={{
-        zIndex,
+        zIndex: 
+        ['inPlay', 'inPlayLose', 'inPlayHidden'].includes(cardState) ? 400 - zIndex :
+          ['played-win'].includes(cardState)
+          ? 200 - zIndex
+          : zIndex,
       }}
     >
       <img

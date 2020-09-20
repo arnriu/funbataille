@@ -15,6 +15,9 @@ const Seat = ({ player, deck, playCard }) => (
         {...card}
       />
     ))}
+    <div className="seat-infos">
+      {player}: {deck.length}
+    </div>
   </div>
 )
 

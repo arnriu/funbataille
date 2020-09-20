@@ -19,14 +19,16 @@ const Game = () => {
   }, [])
 
   const processTrick = index => {
-    const northCard = northDeck.slice(index)[0]
-    const southCard = southDeck.slice(index)[0]
+    const northCardsInPlay = northDeck.slice(index)
+    const southCardsInPlay = southDeck.slice(index)
+    const northCard = northCardsInPlay.shift()
+    const southCard = southCardsInPlay.shift()
 
     northCard.cardState = index % 2 === -1 ? 'inPlay' : 'inPlayHidden'
     southCard.cardState = index % 2 === -1 ? 'inPlay' : 'inPlayHidden'
 
-    setNorthDeck([...northDeck.slice(0, index), northCard])
-    setSouthDeck([...southDeck.slice(0, index), southCard])
+    setNorthDeck([...northDeck.slice(0, index), northCard, ...northCardsInPlay])
+    setSouthDeck([...southDeck.slice(0, index), southCard, ...southCardsInPlay])
 
     setTimeout(() => {
       if (index % 2 === 0 || northCard.hexValue === southCard.hexValue) {
@@ -78,9 +80,9 @@ const Game = () => {
           setNorthDeck(newNorthDeck)
           setSouthDeck(newSouthDeck)
           canPlay.current = true
-        }, 500)
+        }, 1000)
       }
-    }, 500)
+    }, 1000)
   }
 
   const playCard = () => {
@@ -92,7 +94,7 @@ const Game = () => {
 
   return (
     <div>
-      <div style={{ position: 'absolute', top: '50%' }}>
+      <div style={{ position: 'absolute', top: '50%', zIndex: 10 }}>
         <BackButton />
       </div>
       <div className="table">
