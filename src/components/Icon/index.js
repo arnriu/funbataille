@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-const Icon = ({ name, ...rest }) => {
+const Icon = ({ name, type, ...rest }) => {
   const ImportedIconRef = useRef(null)
   const [loading, setLoading] = useState(false)
 
@@ -9,7 +9,9 @@ const Icon = ({ name, ...rest }) => {
     const importIcon = async () => {
       try {
         ImportedIconRef.current = await import(
-          `!!@svgr/webpack?-svgo,+titleProp,+ref!../../assets/icons/${name}.svg`
+          `!!@svgr/webpack?-svgo,+titleProp,+ref!../../assets/${
+            type ?? 'icons'
+          }/${name}.svg`
         )
       } catch (err) {
         throw err
@@ -18,7 +20,7 @@ const Icon = ({ name, ...rest }) => {
       }
     }
     importIcon()
-  }, [name])
+  }, [name, type])
 
   if (!loading && ImportedIconRef.current) {
     const { current } = ImportedIconRef

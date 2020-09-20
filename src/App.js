@@ -5,8 +5,6 @@ import Home from './components/Home'
 import Game from './components/Game'
 import Settings from './components/Settings'
 
-import './App.css'
-
 const App = () => (
   <BrowserRouter>
     <Switch>

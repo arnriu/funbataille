@@ -1,0 +1,58 @@
+@keyframes animPlayedNorth
+  0%
+    transform: translate3d(calc(-50%), calc(10vmin * 1.55721 + 20% ), 0)
+
+  100%
+    transform: translate3d(calc(10%), 10%, 0)
+
+@keyframes animPlayedSouth
+  0%
+    transform: translate3d(calc(-50%), calc(100vh - 20vmin * 1.55721 - 20% ), 0)
+
+  100%
+    transform: translate3d(calc(10%), calc(100vh - 10vmin * 1.55721 - 10% ), 0)
+
+.table
+  background: $green
+  position: relative
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+
+.card
+  width: 10vmin
+  left: 50%
+  position: absolute
+  transition: all .3s ease
+
+  &.card-N
+    &.card-deck
+      transform: translate3d(calc(-110%), 10%, 0)
+
+    &.card-inPlay,
+    &.card-inPlayHidden
+      transform: translate3d(calc(-50%), calc(10vmin * 1.55721 + 20% ), 0)
+
+    &.card-inPlayLose
+      transform: translate3d(calc(-50%), calc(100vh - 20vmin * 1.55721 - 20% ), 0)
+      z-index: 0 !important
+
+    &.card-played-lose,
+    &.card-played-win,
+      animation: animPlayedNorth .3s ease forwards
+
+  &.card-S
+    &.card-deck
+      transform: translate3d(calc(-110%), calc(100vh - 10vmin * 1.55721 - 10% ), 0)
+
+    &.card-inPlay,
+    &.card-inPlayHidden
+      transform: translate3d(calc(-50%), calc(100vh - 20vmin * 1.55721 - 20% ), 0)
+
+    &.card-inPlayLose
+      transform: translate3d(calc(-50%), calc(10vmin * 1.55721 + 20% ), 0)
+      z-index: 0 !important
+
+    &.card-played-lose,
+    &.card-played-win,
+      animation: animPlayedSouth .3s ease forwards
