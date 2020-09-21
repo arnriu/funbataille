@@ -11,7 +11,7 @@ const Icon = ({ name, type, ...rest }) => {
         ImportedIconRef.current = await import(
           `!!@svgr/webpack?-svgo,+titleProp,+ref!../../assets/${
             type ?? 'icons'
-          }/${name}.svg`
+          }/${name ?? 'logo'}.svg`
         )
       } catch (err) {
         throw err
