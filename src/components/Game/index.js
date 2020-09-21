@@ -81,7 +81,7 @@ const Game = () => {
           setNorthDeck(newNorthDeck)
           setSouthDeck(newSouthDeck)
           canPlay.current = true
-        }, 1000)
+        }, 750)
       }
     }, 1000)
   }
