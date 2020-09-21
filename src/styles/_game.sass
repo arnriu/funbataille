@@ -7,10 +7,10 @@
 
 @keyframes animPlayedSouth
   0%
-    transform: translate3d(calc(-50%), calc(100vh - 20vmin * 1.55721 - 20% - 1vmin), 0)
+    transform: translate3d(calc(-50%), calc(100vh - 24vmin * 1.55721 - 20% - 1vmin), 0)
 
   100%
-    transform: translate3d(calc(10%), calc(100vh - 10vmin * 1.55721 - 10% - 1vmin), 0)
+    transform: translate3d(calc(10%), calc(100vh - 12vmin * 1.55721 - 10% - 1vmin), 0)
 
 .table
   background: $green
@@ -32,8 +32,8 @@
     content: ''
     display: block
     position: absolute
-    width: 24vmin
-    height: calc(26vmin / 1.55721)
+    width: 28vmin
+    height: calc(32vmin / 1.55721)
     background: $blue
     left: 50%
     top: 2vmin
@@ -59,7 +59,7 @@
       bottom: 0.125rem
 
 .card
-  width: 10vmin
+  width: 12vmin
   left: 50%
   top: 1vmin
   position: absolute
@@ -72,10 +72,10 @@
 
     &.card-inPlay,
     &.card-inPlayHidden
-      transform: translate3d(-50%, calc(10vmin * 1.55721 + 20% ), 0)
+      transform: translate3d(-50%, calc(12vmin * 1.55721 + 20% ), 0)
 
     &.card-inPlayLose
-      transform: translate3d(-50%, calc(100vh - 20vmin * 1.55721 - 20% - 2vmin ), 0)
+      transform: translate3d(-50%, calc(100vh - 24vmin * 1.55721 - 20% - 2vmin ), 0)
       z-index: 0 !important
 
     &.card-played-lose,
@@ -88,14 +88,14 @@
     transition: all .3s ease
 
     &.card-deck
-      transform: translate3d(-110%, calc(100vh - 10vmin * 1.55721 - 10% - 1vmin ), 0)
+      transform: translate3d(-110%, calc(100vh - 12vmin * 1.55721 - 10% - 1vmin ), 0)
 
     &.card-inPlay,
     &.card-inPlayHidden
-      transform: translate3d(-50%, calc(100vh - 20vmin * 1.55721 - 20% - 1vmin ), 0)
+      transform: translate3d(-50%, calc(100vh - 24vmin * 1.55721 - 20% - 1vmin ), 0)
 
     &.card-inPlayLose
-      transform: translate3d(-50%, calc(10vmin * 1.55721 + 20% + 1vmin ), 0)
+      transform: translate3d(-50%, calc(12vmin * 1.55721 + 20% + 1vmin ), 0)
       z-index: 0 !important
 
     &.card-played-lose,
