@@ -1,24 +1,22 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './components/Home'
 import Game from './components/Game'
 import Settings from './components/Settings'
+import { SVGSource } from './components/Icon'
 
 const App = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route path="/game">
-        <Game />
-      </Route>
-      <Route path="/settings">
-        <Settings />
-      </Route>
-      <Route>
-        <Home />
-      </Route>
-    </Switch>
-  </BrowserRouter>
+  <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="game" element={<Game />} />
+        <Route path="settings" element={<Settings />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+    <SVGSource />
+  </>
 )
 
 export default App
