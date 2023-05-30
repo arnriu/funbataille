@@ -1,5 +1,3 @@
-import React from 'react'
-
 const HomeFooter = () => (
   <footer className="main-footer">
     <span role="img" aria-label="mamie">

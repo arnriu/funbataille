@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Icon from '../Icon'
 import Header from '../Header'
 import Footer from '../Footer'
@@ -12,7 +10,7 @@ const Home = () => (
 
     <div className="main-body">
       <div className="logo-bg">
-        <Icon name="logo" />
+        <Icon id="logo" />
       </div>
 
       <HomeMenu />

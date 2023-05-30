@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Icon from '../Icon'
 import BackButton from '../BackButton'
 import Header from '../Header'
@@ -11,10 +9,10 @@ const Home = () => (
 
     <div className="main-body">
       <div className="logo-bg">
-        <Icon name="logo" />
+        <Icon id="logo" />
       </div>
 
-      <BackButton />      
+      <BackButton />
     </div>
 
     <Footer />

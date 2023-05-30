@@ -1,11 +1,10 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 import Icon from '../Icon'
 
 const btnBody = (icon, label) => (
   <>
-    <Icon name={icon} className="home-menu-icon" />
+    <Icon id={icon} className="home-menu-icon" />
     {label}
   </>
 )
@@ -30,11 +29,11 @@ const buttonTag = {
 }
 
 const HomeMenuItem = ({ to, ...rest }) => (
-  <li className="home-menu-item">
+  <div className="home-menu-item">
     {to.substring(0, 4) === 'http'
       ? buttonTag['a']({ to, ...rest })
       : buttonTag['navlink']({ to, ...rest })}
-  </li>
+  </div>
 )
 
 export default HomeMenuItem

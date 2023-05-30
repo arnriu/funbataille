@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Icon from '../Icon'
 
 import Card from './Card'
@@ -19,7 +17,7 @@ const Seat = ({ player, deck, playCard }) => (
     ))}
     <div className="seat-infos">
       <div className="avatar">
-        <Icon name={player === 'N' ? 'logo' : 'avatar'} />
+        <Icon id={player === 'N' ? 'logo' : 'avatar'} />
       </div>
       {player}: {deck.length}
     </div>

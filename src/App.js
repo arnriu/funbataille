@@ -1,9 +1,9 @@
-import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './components/Home'
 import Game from './components/Game'
 import Settings from './components/Settings'
+import Account from './components/Account'
 import { SVGSource } from './components/Icon'
 
 const App = () => (
@@ -12,6 +12,7 @@ const App = () => (
       <Routes>
         <Route path="game" element={<Game />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="account" element={<Account />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>

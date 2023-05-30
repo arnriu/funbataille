@@ -38,7 +38,7 @@
   flex: 1
   position: relative
   overflow: hidden
-  min-height: 17rem
+  min-height: 22rem
 
   .logo-bg
     position: absolute
@@ -60,42 +60,52 @@
       justify-content: space-around
       padding: 2rem 0
       margin: 0 auto
-      width: 24rem
+      width: 36rem
       height: 100%
       max-height: 30rem
 
-      .home-menu-item
+      .home-menu-row
         display: flex
+        flex-direction: row
 
-        .home-menu-button
+        .home-menu-item
           display: flex
-          width: 100%
-          justify-content: center
-          align-items: center
-          font-size: 2rem
-          border: .25rem solid $primary
-          color: $primary
-          background: $white
-          border-radius: 2rem
-          padding: .75rem
-          margin: .5rem 0
-          cursor: pointer
-          text-decoration: none
-          transform: translate3d(0, 0, 0)
-          transition: all .3s ease
+          flex: 1 1 100%
 
-          .home-menu-icon
-            width: 2rem
-            height: 2rem
-            fill: $primary
-            transition: all .3s ease
-            margin-right: .5rem
+          + .home-menu-item
+            margin-left: 2rem
 
-          &:hover
-            background: $primary
+          .home-menu-button
+            display: flex
+            width: 100%
+            height: 8rem
+            justify-content: center
+            align-items: center
+            font-size: 2rem
+            border: .25rem solid $primary
             color: $white
-            transform: translate3d(0, -.125rem, 0)
-            box-shadow: 0 .5rem 1rem 0 rgba($primary, .5)
+            background: $white url(https://res.cloudinary.com/goto-games/image/upload/c_fit,w_1536/f_auto/v1599062749/homepage/img-Challenges.jpg)
+            background-size: cover
+            border-radius: 2rem
+            padding: .75rem
+            margin: .5rem 0
+            cursor: pointer
+            text-decoration: none
+            transform: translate3d(0, 0, 0)
+            transition: all .3s ease
 
             .home-menu-icon
+              width: 2rem
+              height: 2rem
               fill: $white
+              transition: all .3s ease
+              margin-right: .5rem
+
+            &:hover
+              background: $white
+              color: $primary
+              transform: translate3d(0, -.25rem, 0) scale(1.025)
+              box-shadow: 0 .5rem 1rem 0 rgba($primary, .5)
+
+              .home-menu-icon
+                fill: $primary

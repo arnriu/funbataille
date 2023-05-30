@@ -100,7 +100,7 @@ const Game = () => {
       </div>
       <div className="table">
         <div className="table-bg">
-          <Icon name="logo" />
+          <Icon id="logo" />
         </div>
         <Seat player="N" deck={northDeck} />
         <Seat player="S" deck={southDeck} playCard={playCard} />
